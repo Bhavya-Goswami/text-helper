@@ -1,0 +1,536 @@
+/**
+ * GeminiText Extension Styles - POLISHED FINAL VERSION
+ * 
+ * Design Philosophy: Refined Soft-Rounded Minimalism
+ * - Generous, consistent border radius (12-16px)
+ * - Sophisticated color palette with refined accents
+ * - Elegant spacing and visual hierarchy
+ * - Subtle, purposeful animations
+ * - Premium glassmorphic effects with restraint
+ * - Accessibility-first approach
+ */
+
+:root {
+  /* ============================================
+     COLOR PALETTE - Refined & Cohesive
+     ============================================ */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8f9fa;
+  --bg-tertiary: #f0f1f3;
+  --text-primary: #1a1a1a;
+  --text-secondary: #6b7280;
+  --text-tertiary: #9ca3af;
+  --accent-primary: #0066ff;
+  --accent-secondary: #0052cc;
+  --accent-success: #10b981;
+  --accent-warning: #f59e0b;
+  --accent-error: #ef4444;
+  --accent-light: rgba(0, 102, 255, 0.08);
+  --border-light: rgba(0, 0, 0, 0.06);
+  --border-medium: rgba(0, 0, 0, 0.12);
+  
+  /* ============================================
+     TYPOGRAPHY
+     ============================================ */
+  --font-system: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+  --font-mono: 'Menlo', 'Monaco', 'Courier New', monospace;
+  
+  /* ============================================
+     SPACING - Generous & Consistent
+     ============================================ */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 12px;
+  --spacing-lg: 16px;
+  --spacing-xl: 24px;
+  --spacing-2xl: 32px;
+  
+  /* ============================================
+     BORDER RADIUS - Soft & Rounded
+     ============================================ */
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-2xl: 20px;
+  
+  /* ============================================
+     SHADOWS - Soft, Layered, Refined
+     ============================================ */
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 4px 16px rgba(0, 0, 0, 0.12);
+  --shadow-xl: 0 8px 24px rgba(0, 0, 0, 0.15);
+  
+  /* ============================================
+     TRANSITIONS - Smooth & Purposeful
+     ============================================ */
+  --transition-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-base: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ============================================
+   GLOBAL STYLES
+   ============================================ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-system);
+  font-size: 13px;
+  line-height: 1.5;
+  letter-spacing: -0.2px;
+}
+
+/* ============================================
+   TYPOGRAPHY
+   ============================================ */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-system);
+  font-weight: 600;
+  letter-spacing: -0.3px;
+}
+
+h1 {
+  font-size: 20px;
+  margin-bottom: var(--spacing-md);
+}
+
+h2 {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-md);
+  margin-top: var(--spacing-lg);
+  font-weight: 600;
+}
+
+p {
+  margin-bottom: var(--spacing-md);
+  line-height: 1.6;
+}
+
+a {
+  color: var(--accent-primary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--accent-secondary);
+}
+
+code, pre {
+  font-family: var(--font-mono);
+  background-color: var(--bg-tertiary);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  color: var(--accent-primary);
+  font-size: 11px;
+}
+
+/* ============================================
+   BUTTONS - Refined & Soft
+   ============================================ */
+
+button {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-light);
+  color: var(--text-primary);
+  padding: var(--spacing-sm) var(--spacing-md);
+  font-family: var(--font-system);
+  font-size: 12px;
+  cursor: pointer;
+  border-radius: var(--radius-lg);
+  transition: all var(--transition-base);
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  font-weight: 600;
+}
+
+button:hover {
+  background: var(--bg-tertiary);
+  border-color: var(--border-medium);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+button.primary {
+  background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
+  color: #ffffff;
+  border-color: var(--accent-primary);
+  box-shadow: 0 2px 8px rgba(0, 102, 255, 0.25);
+}
+
+button.primary:hover {
+  background: linear-gradient(135deg, var(--accent-secondary) 0%, #003d99 100%);
+  box-shadow: 0 4px 12px rgba(0, 102, 255, 0.35);
+  transform: translateY(-2px);
+}
+
+/* ============================================
+   INPUT FIELDS - Refined & Soft
+   ============================================ */
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="search"],
+textarea,
+select {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-light);
+  color: var(--text-primary);
+  padding: var(--spacing-sm) var(--spacing-md);
+  font-family: var(--font-system);
+  font-size: 13px;
+  border-radius: var(--radius-lg);
+  transition: all var(--transition-base);
+}
+
+input[type="text"]::placeholder,
+input[type="password"]::placeholder,
+input[type="email"]::placeholder,
+input[type="search"]::placeholder,
+textarea::placeholder {
+  color: var(--text-tertiary);
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+input[type="search"]:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--accent-primary);
+  background: var(--bg-primary);
+  box-shadow: 0 0 0 3px var(--accent-light);
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  accent-color: var(--accent-primary);
+  cursor: pointer;
+}
+
+/* ============================================
+   CONTAINERS
+   ============================================ */
+
+.container {
+  padding: var(--spacing-lg);
+}
+
+.section {
+  margin-bottom: var(--spacing-lg);
+  padding-bottom: var(--spacing-lg);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.section:last-child {
+  border-bottom: none;
+}
+
+.section-title {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  color: var(--text-tertiary);
+  margin-bottom: var(--spacing-md);
+  font-weight: 700;
+}
+
+/* ============================================
+   STATUS INDICATOR
+   ============================================ */
+
+.status-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-sm) var(--spacing-md);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  font-size: 12px;
+  color: var(--text-secondary);
+  transition: all var(--transition-base);
+  font-weight: 600;
+}
+
+.status-indicator.connected {
+  border-color: rgba(16, 185, 129, 0.3);
+  color: var(--accent-success);
+  background: rgba(16, 185, 129, 0.05);
+}
+
+.status-indicator.error {
+  border-color: rgba(239, 68, 68, 0.3);
+  color: var(--accent-error);
+  background: rgba(239, 68, 68, 0.05);
+}
+
+.status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: currentColor;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+/* ============================================
+   COMMAND GRID
+   ============================================ */
+
+.command-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+}
+
+/* ============================================
+   NOTIFICATIONS - Toast Style
+   ============================================ */
+
+.notification {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  padding: var(--spacing-md) var(--spacing-lg);
+  border-radius: var(--radius-lg);
+  font-family: var(--font-system);
+  font-size: 13px;
+  font-weight: 600;
+  z-index: 999999;
+  animation: slideInUp 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: var(--shadow-lg);
+}
+
+.notification.success {
+  background-color: var(--accent-success);
+  color: #ffffff;
+}
+
+.notification.error {
+  background-color: var(--accent-error);
+  color: #ffffff;
+}
+
+.notification.info {
+  background-color: var(--accent-primary);
+  color: #ffffff;
+}
+
+.notification.warning {
+  background-color: var(--accent-warning);
+  color: #ffffff;
+}
+
+@keyframes slideInUp {
+  from {
+    transform: translateY(16px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOutDown {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(16px);
+    opacity: 0;
+  }
+}
+
+/* ============================================
+   MODAL/DIALOG - Refined & Soft
+   ============================================ */
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  backdrop-filter: blur(4px);
+  animation: fadeIn 0.2s ease-out;
+}
+
+.modal-content {
+  background: var(--bg-primary);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-xl);
+  padding: var(--spacing-xl);
+  max-width: 380px;
+  width: 90%;
+  box-shadow: var(--shadow-xl);
+  animation: slideUp 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-lg);
+}
+
+.modal-header h2 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  font-size: 24px;
+  padding: 0;
+  transition: color var(--transition-fast);
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-lg);
+}
+
+.modal-close:hover {
+  color: var(--accent-primary);
+  background: var(--bg-secondary);
+}
+
+.modal-section {
+  margin-bottom: var(--spacing-lg);
+  padding-bottom: var(--spacing-lg);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.modal-section:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.modal-label {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-md);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(16px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* ============================================
+   DIVIDER
+   ============================================ */
+
+.divider {
+  height: 1px;
+  background-color: var(--border-light);
+  margin: var(--spacing-lg) 0;
+}
+
+.divider.accent {
+  background-color: var(--accent-primary);
+  height: 2px;
+}
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+
+.text-secondary {
+  color: var(--text-secondary);
+}
+
+.text-tertiary {
+  color: var(--text-tertiary);
+}
+
+.text-accent {
+  color: var(--accent-primary);
+}
+
+.text-success {
+  color: var(--accent-success);
+}
+
+.flex {
+  display: flex;
+  gap: var(--spacing-md);
+}
+
+.gap-md {
+  gap: var(--spacing-md);
+}
